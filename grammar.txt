@@ -1,0 +1,28 @@
+?start: expr
+
+?expr: term
+     | expr term       -> application0
+     | expr "." term   -> application1
+
+?term: VARIABLE     -> variable
+     | abstraction
+     | CHURCH       -> church
+     | NAME         -> name
+     | "(" expr ")"
+     | "[" expr "]"
+
+?abstraction: ABS "(" expr ")"   -> abstraction
+             |ABSS "(" expr ")"  -> abstractions
+
+ABS.4            :("L"|"λ")
+ABSS.5           :("L"|"λ") "^" INT
+VARIABLE.3       : /[a-z]+/ INT
+CHURCH.2         : INT
+NAME.1           : /[a-zA-Z_][a-zA-Z0-9_]*/
+
+COMMENT: /\[[^\]]*\]/
+%ignore COMMENT
+
+%import common.INT
+%import common.WS
+%ignore WS

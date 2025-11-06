@@ -1,0 +1,30 @@
+{
+  "true": "L^2(v2)",
+  "false": "L^2(v1)",
+  "if": "L^3(v3 v2 v1)",
+  "and": "L^2(v2 v1 v1)",
+  "or": "L^2(v2 v2 v1)",
+  "not": "L(v1 false true)",
+
+  "pair": "L^3(v1 v3 v2)",
+  "first": "L(v1 true)",
+  "second": "L(v1 false)",
+  "nil": "L(true)",
+  "null": "L(v1 L^2(false))",
+  "cons": "L^4(v2 v4 (v3 v2 v1))",
+
+  "fix": "L(L(v2 (v1 v1)) L(v2(v1 v1)))",
+  "succ": "L^3(v2 (v3 v2 v1))",
+  "predSucc": "L(pair (second v1) (succ (second v1)))",
+  "pred": "L(first (v1 predSucc (pair 0 0)))",
+  "zero": "false",
+  "isZero": "L(v1 L(false) true)",
+  
+  "add": "L^4(v4 v2 (v3 v2 v1))",
+  "mul": "L^3(v3 v2 v1)",
+  "sub": "L^2(v1 pred v2)",
+  "leq": "L^2(isZero (sub v2 v1))",
+  "equal": "L^2(and (leq v1 v2) (leq v2 v1))",
+  "div": "fix L^3(if (leq v1 v2) (succ (v3 (sub v2 v1) v1)) zero)",
+  "gcd": "fix L^3(if (equal v1 v2) v1 (if (leq v2 v1) (v3 v1 v2) (v3 v1 (sub v2 v1))))"
+}
