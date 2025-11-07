@@ -44,3 +44,7 @@ lamb.dfs_derive()
 = λ^2((v2 (λ((v2 (λ((v2 (λ(v1) v1))) v1))) v1)))
 = λ^2((v2 (λ((v2 (λ((v2 v1)) v1))) v1)))
 ```
+
+## Philosophy
+### Why $\lambda^n$?
+$\lambda$ is a function that maps any expression to it's abstraction, adding a required argument at the front. Repeated abstraction corresponds to function conposition $\lambda \circ \lambda \circ \cdots \circ \lambda = \lambda^n$
