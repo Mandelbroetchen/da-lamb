@@ -47,4 +47,4 @@ lamb.dfs_derive()
 
 ## Philosophy
 ### Why $\lambda^n$?
-$\lambda$ is a function that maps any expression to it's abstraction, adding a required argument at the front. Repeated abstraction corresponds to function conposition $\lambda \circ \lambda \circ \cdots \circ \lambda = \lambda^n$
+$\lambda$ is a function that maps any expression to its abstraction, adding a required argument at the front. Repeated abstraction corresponds to function conposition $\lambda \circ \lambda \circ \cdots \circ \lambda = \lambda^n$
